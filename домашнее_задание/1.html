@@ -21,12 +21,11 @@
   printNumbers(10);
   
   function printNumbers(number) {
-    for (let i = 0; i <= number; ++i){
+    for (let i = 0; i <= number; ++i) {
       let description;
       if (i > 0) {
-        description = i % 2 === 0 ? "четное число" : "нечетное число"
-      }
-      else {
+        description = i % 2 === 0 ? "четное число" : "нечетное число";
+      } else {
         description = "это ноль";
       }
       console.log(`${i} - ${description}`);
