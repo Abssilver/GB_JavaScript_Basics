@@ -21,7 +21,8 @@
 -->
 <script>
   "use strict";
-  const celsiusTemp = parseFloat(prompt("Введите температуру в градусах цельсия, для конвертации в градусы Фаренгейта"));
+  
+  const celsiusTemp = Number.parseFloat(prompt("Введите температуру в градусах цельсия, для конвертации в градусы Фаренгейта"));
   const fahrenheitTemp =  (9 / 5) * celsiusTemp + 32;
   alert (`Цельсий: ${celsiusTemp.toFixed(2)}, Фаренгейт: ${fahrenheitTemp.toFixed(2)}`);
 </script>

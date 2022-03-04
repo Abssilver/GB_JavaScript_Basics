@@ -27,7 +27,8 @@
 -->
 <script>
   "use strict";
-  const input = parseInt(prompt("Введите число для анализа"));
+  
+  const input = Number.parseInt(prompt("Введите число для анализа"));
   const units = Math.trunc(input % 10);
   const dozens = Math.trunc(input % 100 / 10);
   const hundreds = Math.trunc(input % 1000 / 100);
