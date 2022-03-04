@@ -34,17 +34,21 @@ console.log(declinationOfNumber(5, "стул", "стула", "стульев"));
    * @returns {string} нужное склонение.
    */
   function declinationOfNumber(count, one, two, five) {
-    count %= 100;
+    const stepOfHundreds = count % 100;
     const stepOfTen = count % 10;
     
-    if (count > 4 && count < 21)
+    if (stepOfHundreds > 4 && stepOfHundreds < 21) {
       return five;
-    else if (stepOfTen > 1 && stepOfTen < 5)
+    }
+    else if (stepOfTen > 1 && stepOfTen < 5) {
       return two;
-    else if (stepOfTen === 1)
+    }
+    else if (stepOfTen === 1) {
       return one;
-    else
+    }
+    else {
       return five;
+    }
   }
 
   // Число яблок, можно пробовать поставить свое целое, положительное число.

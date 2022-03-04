@@ -1,4 +1,6 @@
-﻿/**
+﻿"use strict";
+
+/**
  * Фукнция расчета суммы.
  * @param {number} first - слагаемое число.
  * @param {number} second - слагаемое число.
@@ -15,8 +17,9 @@ function sum(first, second) {
  * @return {number} - разность.
  */
 function difference(first, second) {
-    if (first > second)
+    if (first > second) {
         return first - second;
+    }
     return second - first;
 }
 

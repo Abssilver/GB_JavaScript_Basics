@@ -20,20 +20,24 @@
 -->
 <script>
   "use strict";
-  const firstVar = parseFloat(prompt("Введите первое число"));
-  const secondVar = parseFloat(prompt("Введите второе число"));
+  
+  const firstVar = Number.parseFloat(prompt("Введите первое число"));
+  const secondVar = Number.parseFloat(prompt("Введите второе число"));
   
   const result = getResultDependOnInput(firstVar, secondVar);
   if (result)
     console.log(result);
 
   function getResultDependOnInput(inputFirst, inputSecond) {
-    if (inputFirst > 0 && inputSecond > 0)
+    if (inputFirst > 0 && inputSecond > 0) {
       return inputFirst - inputSecond;
-    else if (inputFirst < 0 && inputSecond < 0)
+    } 
+    else if (inputFirst < 0 && inputSecond < 0) {
       return inputFirst * inputSecond;
-    else if (inputFirst * inputSecond < 0)
+    }
+    else if (inputFirst * inputSecond < 0) {
       return inputFirst + inputSecond;
+    }
   }
 </script>
 </body>

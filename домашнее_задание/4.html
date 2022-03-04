@@ -32,8 +32,8 @@
 <script>
   "use strict";
 
-  const firstInput = parseFloat(prompt("Введите первое число"));
-  const secondInput = parseFloat(prompt("Введите второе число"));
+  const firstInput = Number.parseFloat(prompt("Введите первое число"));
+  const secondInput = Number.parseFloat(prompt("Введите второе число"));
 
   console.log(`Числа: ${firstInput} и ${secondInput}`)
   console.log(`Сумма: ${sum(firstInput, secondInput)}`);
