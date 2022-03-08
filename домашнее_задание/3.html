@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+  <script src="/NumericObject.js"></script>
+</head>
+<body>
+<!--
+Необязательное задание.
+
+Необходимо создать функцию getDigitsOfNumber, которая принимает целое
+положительное число в диапазоне от 0 до 1000.
+Функция должна вернуть обычный объект с тремя свойствами:
+1. units - содержит число, количество единиц в параметре функции.
+2. dozens - содержит число, количество десятков в параметре функции.
+3. hundreds - содержит число, количество сотен в параметре функции.
+Если функции было передано не целое положительное число, либо число в ином
+диапазоне, нежели задано в условии, функция должна вывести в консоль информацию
+об ошибке и вернуть пустой объект.
+Необходимо также прописать jsdoc для данной функции.
+
+Подсказка:
+У объекта console есть разные методы, мы часто используем console.log для того
+чтобы вывести в консоль какое-то значение, однако есть и другие методы, найдите
+в интернете какие методы существуют и используйте "правильный метод" в нужном
+месте. Обратите внимание что функция не должна выбрасывать ошибку, она должна
+только вывести в консоль информацию о том, что что-то пошло не так.
+Обратите внимание на слова "от 0 до 1000", это означает диапазон [0, 999], что
+можно прочитать как "от нуля до 999 включительно".
+-->
+<script>
+  "use strict";
+  
+  const input = Number.parseInt(prompt("Введите число для анализа"));
+  const numericObject = getDigitsOfNumber(input);
+  if (numericObject.units !== undefined){
+    numericObject.printData();
+  } else {
+    console.log('Empty object')
+  }
+  
+  /**
+   * Фукнция возвращает объект с разрядами числа в диапазоне до 1000.
+   * @param {number} positiveNumber - Число в диапазоне от 0 до 999, включительно
+   * @returns {object} Объект с разрядами числа, записанными в свойствах или пустой при ошибке
+   */
+  function getDigitsOfNumber(positiveNumber) {
+    if (!Number.isInteger(positiveNumber)) {
+      console.warn(`${positiveNumber} is not integer`);
+      return {};
+    } else if (positiveNumber < 0 || positiveNumber > 999) {
+      console.warn(`${positiveNumber} is out of range`);
+      return {};
+    }
+    const units = Math.trunc(input % 10);
+    const dozens = Math.trunc(input % 100 / 10);
+    const hundreds = Math.trunc(input % 1000 / 100);
+    return new NumericObject(units, dozens, hundreds);
+  }
+</script>
+</body>
+</html>
